@@ -1,9 +1,9 @@
 const rot13 = require("ebg13");
 
 module.exports = async function (context, req) {
-    if (req.query.text || (req.body && req.body.text)) {
+    if (req.query.input || (req.body && req.body.input)) {
         context.res = {
-            body: rot13(req.query.text || req.body.text)
+            body: rot13(req.query.input || req.body.input)
         };
     } else {
         context.res = {
